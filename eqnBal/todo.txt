@@ -1,0 +1,7 @@
+-Input desired eqn
+
+-identify compounds
+
+-balance using the 7 steps
+
+-output balanced eqn
