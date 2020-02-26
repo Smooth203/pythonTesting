@@ -10,7 +10,7 @@ class Map(pygame.sprite.Sprite):
 		self.image.set_colorkey(white)
 
 		# pygame.draw.rect(self.image, colour, [0, 0, w, h]) #draw 
-		self.image = pygame.image.load('map.jpg').convert_alpha()
+		self.image = pygame.image.load('assets/map.png').convert_alpha()
 
 		self.rect = self.image.get_rect() # fetch a rect to represent object w/ object dimension
 

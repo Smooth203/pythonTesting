@@ -1,0 +1,8 @@
+if player enters vehicle - controls swap to separate controls
+
+
+
+home base
+venture from base for missions
+steal from gangs
+sell small or big shipments

@@ -39,6 +39,10 @@ spriteList.add(world, player)
 carryOn = True #decides whether main loop continues
 clock = pygame.time.Clock() #used to control fps
 
+# Functions
+def debug():
+	print(player.anim)
+
 # Main Loop
 while carryOn:
 	for event in pygame.event.get(): #user did something
@@ -47,15 +51,17 @@ while carryOn:
 		elif event.type == pygame.KEYDOWN:
 			if event.key == pygame.K_ESCAPE: #pressing x will quit
 				carryOn = False
+			elif event.key == pygame.K_F3:
+				debug()
 		elif event.type == pygame.KEYUP:
 			player.moving = False
 			player.anim = 0
 
 	''' Game Logic '''
 	keys = pygame.key.get_pressed()
-	if keys[pygame.K_w]:
-		world.moveU(player.speed)
-		player.moving = True
+	if keys[pygame.K_w]:				##
+		world.moveU(player.speed)		##	Char Controls
+		player.moving = True			##
 		player.facing = 0
 	elif keys[pygame.K_s]:
 		world.moveD(player.speed)
@@ -66,9 +72,9 @@ while carryOn:
 		player.moving = True
 		player.facing = 3
 	elif keys[pygame.K_d]:
-		world.moveR(player.speed)
-		player.moving = True
-		player.facing = 1
+		world.moveR(player.speed)		##
+		player.moving = True			##
+		player.facing = 1				##
 
 	#player animation
 	player.walkAnim()

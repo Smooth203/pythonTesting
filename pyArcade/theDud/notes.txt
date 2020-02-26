@@ -1,0 +1,4 @@
+Grid based navigation
+
+if told to go a designated room or area, a quickest path is calculated based of the grid (turns taken into account),
+then (at a known speed) 'it' knows how long to run the move() for.
