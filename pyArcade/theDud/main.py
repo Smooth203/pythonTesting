@@ -10,11 +10,11 @@ white = (255, 255, 255)
 #
 
 # declarations
-grid = []
+grid = [[1,1,1,1,1],[1,0,0,0,1],[1,0,0,0,1],[1,0,0,0,1],[1,1,1,0,1]]
 #
 
 # Open Game Window
-size = (767, 423)
+size = (1000, 700)
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption('Nav Test')
 #
@@ -27,7 +27,7 @@ clock = pygame.time.Clock() #used to control fps
 # init sprites and shit
 spriteList = pygame.sprite.Group()
 
-dud = Dud(black, 22, 22)
+dud = Dud(black, 10, 10)
 dud.rect.x = 44
 dud.rect.y = 44
 
@@ -47,9 +47,13 @@ def drawGrid(size):
 	for i in range(len1):
 		len2 = len(grid[i])
 		for j in range(len2):
-			pygame.draw.rect(screen, black, (i*size, j*size, size, size), 1)
+			if grid[i][j] == 1:
+				col = black
+			else:
+				col = white
+			pygame.draw.rect(screen, col, (i*size, j*size, size, size), 0)
 
-initGrid(70, 39)
+#initGrid(70, 39)
 
 # Main Loop
 while carryOn:
@@ -65,9 +69,9 @@ while carryOn:
 	# Draw #
 	screen.fill(white) # Clear Screen first
 
-	drawGrid(11)
+	drawGrid(25)
 	spriteList.draw(screen)
-	screen.blit(fp, (0,0))
+	#screen.blit(fp, (0,0))
 
 	pygame.display.flip() # Update the Screen
 
