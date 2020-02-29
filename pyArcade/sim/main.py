@@ -54,7 +54,7 @@ def checkVillagers(checkFor):
 		x = i.rect.x
 		y = i.rect.y
 		if getMouse('x') >= x and getMouse('x') <= x + 5 and getMouse('y') >= y and getMouse('y') <= y + 5:
-			print('found')
+			print(x)
 
 def getMouse(pos):
 	x, y = pygame.mouse.get_pos()
